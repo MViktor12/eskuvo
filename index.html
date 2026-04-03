@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Évi & Krisztián Esküvője</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html,body{
+margin:0;
+padding:0;
+overflow-x:hidden;
+}
+
+
+
+
+body{
+margin:0;
+font-family:'Playfair Display', serif;
+color:white;
+background:#0f2b1d;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background-image:url("kep1.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+width:100%;
+overflow:hidden;
+}
+
+.overlay{
+background:rgba(0,0,0,0.35);
+padding:7px;
+border-radius:13px;
+}
+
+h3{
+   margin-bottom:-13px; 
+}
+
+h2{
+text-shadow: 2px 2px 4px #000000;
+}
+
+
+h1{
+font-size:50px;
+color:#ffffff;
+margin:0;
+text-shadow: 2px 2px 4px #000000;
+margin: -9px;
+font-size: 44px;
+}
+
+.date{
+font-size:28px;
+margin-top:10px;
+}
+
+.section{
+padding:20px 12px;
+text-align:center;
+}
+
+.green{
+background:#1f4d3a;
+}
+
+.bordo{
+background:#7a1e3a;
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.gallery img{
+width:320px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.box{
+background:#7a1e3a;
+padding:10px;
+border-radius:10px;
+min-width:50px;
+}
+
+.number{
+font-size:20px;
+font-weight:bold;
+}
+
+.program{
+max-width:700px;
+margin:auto;
+}
+
+.event{
+background:white;
+color:#333;
+margin:25px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.time{
+font-size:22px;
+font-weight:bold;
+color:#7a1e3a;
+}
+
+.map{
+margin-top:20px;
+border-radius:15px;
+overflow:hidden;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:#0f2b1d;
+}
+
+
+.flower-top{
+display:block;
+margin:auto;
+width:280px;
+margin-bottom:0px;
+}
+
+.flower-bottom{
+display:block;
+margin:auto;
+width:280px;
+margin-top:30px;
+transform:rotate(180deg);
+}
+
+
+
+
+
+.timeline{
+position:relative;
+max-width:900px;
+margin:auto;
+padding:10px 0;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:2.5px;
+background:rgb(255, 255, 255);
+top:0;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+}
+
+.timeline-item{
+padding:20px;
+position:relative;
+width:50%;
+box-sizing:border-box;
+}
+
+.timeline-item.left{
+left:0;
+text-align:right;
+}
+
+.timeline-item.right{
+left:50%;
+}
+
+.timeline-item .content{
+background:white;
+color:#000000;
+padding:2px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+text-align: center;
+}
+
+.timeline-icon{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+border:2px solid #ffffff;
+z-index:2;
+}
+
+.timeline-icon img{
+width:30px;
+height:30px;
+}
+
+.timeline-item.left .timeline-icon{
+right:-70px;
+}
+
+.timeline-item.right .timeline-icon{
+left:-70px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<section class="hero" data-aos="fade-up">
+
+<div class="overlay">
+
+<h1>Évi</h1>
+<h1>&</h1>
+<h1>Krisztián</h1>
+<div class="date">2026. Augusztus 21.</div>
+
+<div class="countdown">
+
+<div class="box">
+<div id="days" class="number"></div>
+nap
+</div>
+
+<div class="box">
+<div id="hours" class="number"></div>
+óra
+</div>
+
+<div class="box">
+<div id="minutes" class="number"></div>
+perc
+</div>
+
+<div class="box">
+<div id="seconds" class="number"></div>
+mp
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section bordo" data-aos="fade-up">
+
+<img src="viragminta.png" class="flower-top">
+
+<h2>Esküvő Programja</h2>
+
+<div class="timeline">
+
+<div class="timeline-item left" data-aos="fade-right">
+
+<div class="timeline-icon">
+<img src="church.png">
+</div>
+
+<div class="content">
+<h3>Egyházi szertartás</h3>
+<p>13:30</p>
+</div>
+</div>
+
+
+<div class="timeline-item right" data-aos="fade-left">
+
+<div class="timeline-icon">
+<img src="love.png">
+</div>
+
+<div class="content">
+<h3>Állófogadás</h3>
+<p>15:30</p>
+</div>
+</div>
+
+
+
+<div class="timeline-item left" data-aos="fade-right">
+
+<div class="timeline-icon">
+<img src="hall.png">
+</div>
+
+<div class="content">
+<h3>Polgári szertartás</h3>
+<p>16:30</p>
+</div>
+</div>
+
+
+
+<div class="timeline-item right" data-aos="fade-left">
+
+<div class="timeline-icon">
+<img src="banquet.png">
+</div>
+
+<div class="content">
+<h3>Ünnepi vacsora</h3>
+<p>19:00</p>
+</div>
+</div>
+
+
+
+<div class="timeline-item left" data-aos="fade-right">
+
+<div class="timeline-icon">
+<img src="wedding-dinner.png">
+</div>
+
+<div class="content">
+<h3>Éjféli vacsora</h3>
+<p>23:30</p>
+</div>
+</div>
+
+
+</div>
+<img src="viragminta.png" class="flower-bottom">
+</section>
+
+
+
+<section class="section bordo" data-aos="fade-up">
+
+<h2>Esküvő Helyszínek</h2>
+
+<div class="program">
+
+<div class="event">
+
+<div class="time">13:30</div>
+<div class="time">Egyházi szertartás</div>
+
+<p>Nagykökényes, Római katolikus templom</p>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Nagykökényes%20templom&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="250"
+frameborder="0">
+</iframe>
+
+</div>
+
+</div>
+
+<div class="event">
+<div class="time">16:30</div>
+<div class="time">Polgári szertartás</div>
+
+<p>Nagygombos, Vad Ló Ranch</p>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=Nagygombos%20Vad%20Lo%20Ranch&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="250"
+frameborder="0">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section green" data-aos="fade-up">
+
+<h2>Szeretettel várunk benneteket!</h2>
+
+<p>
+Aki esküvőnkre szép ajándékot adna, A reánk szánt összeget borítékba rakja. S, hogy szerencsés legyen e nagy napunk, Örülünk, ha ajándékba egy-egy sorsjegyet is kapunk.
+</p>
+
+</section>
+
+<footer>
+
+Évi & Krisztián • 2026 ❤️
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+AOS.init();
+
+const weddingDate = new Date("Aug 21, 2026 13:30:00").getTime();
+
+setInterval(function(){
+
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+</body>
+</html>
